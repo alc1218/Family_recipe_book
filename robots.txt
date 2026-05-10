@@ -1,0 +1,10 @@
+# Our Family Recipe Book — robots.txt
+# Allow all crawlers to index the public site
+
+User-agent: *
+Allow: /
+
+# Don't index profile or session-scoped data files
+Disallow: /*__p_*
+
+Sitemap: https://alc1218.github.io/Cooking_book/sitemap.xml
