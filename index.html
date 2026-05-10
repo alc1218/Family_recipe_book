@@ -169,21 +169,47 @@
     --bg-base: #e8d9b2;
     --bg-glow1: rgba(255, 240, 200, 0.5);
     --bg-glow2: rgba(180, 130, 80, 0.15);
+    --chip-bg: rgba(220, 200, 150, 0.4);
+    --chip-bg-soft: rgba(220, 200, 150, 0.25);
+    --chip-bg-strong: rgba(220, 200, 150, 0.55);
+    --chip-border: rgba(120, 90, 50, 0.2);
+    --chip-text: var(--ink-soft);
+    --pill-bg: rgba(255, 250, 235, 0.6);
+    --pill-hover: rgba(255, 240, 210, 0.95);
+    --otd-grad: linear-gradient(135deg, rgba(243, 217, 138, 0.4), rgba(220, 200, 150, 0.2));
+    --surface-bg-faint: rgba(255, 250, 235, 0.5);
+    --surface-bg-soft: rgba(255, 250, 235, 0.6);
+    --surface-bg: rgba(255, 250, 235, 0.7);
+    --surface-bg-strong: rgba(255, 250, 235, 0.9);
+    --surface-hover: rgba(255, 240, 210, 0.95);
   }
   [data-theme="midnight"] {
     --paper: #1e2238;
     --paper-dark: #161a30;
     --paper-edge: #2f365a;
     --ink: #ece1c8;
-    --ink-soft: #a89c80;
-    --accent: #d4a35a;
-    --accent-soft: #e8c585;
-    --leaf: #8aa872;
+    --ink-soft: #b8ac90;
+    --accent: #e8c585;
+    --accent-soft: #f4d77a;
+    --leaf: #b8d294;
     --gold: #f4d77a;
     --shadow: rgba(0, 0, 0, 0.55);
     --bg-base: #0e1124;
     --bg-glow1: rgba(80, 100, 160, 0.18);
     --bg-glow2: rgba(212, 163, 90, 0.12);
+    --chip-bg: rgba(244, 215, 122, 0.18);
+    --chip-bg-soft: rgba(244, 215, 122, 0.1);
+    --chip-bg-strong: rgba(244, 215, 122, 0.25);
+    --chip-border: rgba(244, 215, 122, 0.4);
+    --chip-text: var(--ink);
+    --pill-bg: rgba(232, 220, 200, 0.08);
+    --pill-hover: rgba(244, 215, 122, 0.18);
+    --otd-grad: linear-gradient(135deg, rgba(244, 215, 122, 0.22), rgba(212, 163, 90, 0.1));
+    --surface-bg-faint: rgba(46, 52, 86, 0.45);
+    --surface-bg-soft: rgba(46, 52, 86, 0.65);
+    --surface-bg: rgba(46, 52, 86, 0.78);
+    --surface-bg-strong: rgba(46, 52, 86, 0.92);
+    --surface-hover: rgba(70, 78, 122, 0.85);
   }
   [data-theme="summer"] {
     --paper: #fffbed;
@@ -199,6 +225,19 @@
     --bg-base: #f3e8c4;
     --bg-glow1: rgba(255, 230, 160, 0.6);
     --bg-glow2: rgba(150, 200, 100, 0.18);
+    --chip-bg: rgba(230, 207, 148, 0.5);
+    --chip-bg-soft: rgba(230, 207, 148, 0.3);
+    --chip-bg-strong: rgba(230, 207, 148, 0.65);
+    --chip-border: rgba(90, 138, 58, 0.3);
+    --chip-text: var(--ink-soft);
+    --pill-bg: rgba(255, 251, 237, 0.7);
+    --pill-hover: rgba(255, 240, 200, 1);
+    --otd-grad: linear-gradient(135deg, rgba(232, 176, 72, 0.4), rgba(230, 207, 148, 0.2));
+    --surface-bg-faint: rgba(255, 251, 237, 0.5);
+    --surface-bg-soft: rgba(255, 251, 237, 0.6);
+    --surface-bg: rgba(255, 251, 237, 0.7);
+    --surface-bg-strong: rgba(255, 251, 237, 0.9);
+    --surface-hover: rgba(255, 230, 180, 1);
   }
   [data-theme="autumn"] {
     --paper: #f3dcb0;
@@ -214,6 +253,19 @@
     --bg-base: #d8b078;
     --bg-glow1: rgba(255, 200, 120, 0.45);
     --bg-glow2: rgba(180, 80, 30, 0.2);
+    --chip-bg: rgba(200, 152, 104, 0.4);
+    --chip-bg-soft: rgba(200, 152, 104, 0.25);
+    --chip-bg-strong: rgba(200, 152, 104, 0.55);
+    --chip-border: rgba(168, 56, 32, 0.3);
+    --chip-text: var(--ink);
+    --pill-bg: rgba(243, 220, 176, 0.7);
+    --pill-hover: rgba(255, 230, 180, 0.95);
+    --otd-grad: linear-gradient(135deg, rgba(212, 152, 48, 0.4), rgba(200, 152, 104, 0.2));
+    --surface-bg-faint: rgba(243, 220, 176, 0.5);
+    --surface-bg-soft: rgba(243, 220, 176, 0.6);
+    --surface-bg: rgba(243, 220, 176, 0.75);
+    --surface-bg-strong: rgba(243, 220, 176, 0.9);
+    --surface-hover: rgba(255, 220, 160, 0.95);
   }
 
   * { box-sizing: border-box; }
@@ -320,7 +372,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 4px;
     padding: 10px 14px;
@@ -341,7 +393,7 @@
   .pill {
     font-family: 'Caveat', cursive;
     font-size: 18px;
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--pill-bg);
     border: 1px solid var(--paper-edge);
     color: var(--ink-soft);
     padding: 4px 14px;
@@ -352,7 +404,7 @@
     align-items: center;
     gap: 4px;
   }
-  .pill:hover { background: rgba(255, 240, 210, 0.95); }
+  .pill:hover { background: var(--pill-hover); }
   .pill.active { background: var(--accent); color: var(--paper); border-color: var(--accent); }
   .pill.tag-pill { font-size: 16px; font-style: italic; }
   .pill.fav-pill.active { background: var(--gold); border-color: var(--gold); color: var(--ink); }
@@ -379,9 +431,9 @@
     color: var(--ink-soft);
     border: 1px solid var(--paper-edge);
   }
-  .btn-ghost:hover { background: rgba(255, 240, 210, 0.6); }
+  .btn-ghost:hover { background: var(--surface-hover); }
   .btn-icon {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     color: var(--ink-soft);
     padding: 10px 14px;
@@ -390,7 +442,7 @@
     font-family: inherit;
     font-size: 18px;
   }
-  .btn-icon:hover { background: rgba(255, 240, 210, 0.95); }
+  .btn-icon:hover { background: var(--surface-hover); }
 
   /* View toggle */
   .view-toggle {
@@ -398,7 +450,7 @@
     border: 1px solid var(--paper-edge);
     border-radius: 4px;
     overflow: hidden;
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
   }
   .view-toggle button {
     background: transparent;
@@ -483,7 +535,7 @@
     top: -10px; left: 50%;
     transform: translateX(-50%) rotate(-2deg);
     width: 90px; height: 22px;
-    background: rgba(220, 200, 150, 0.55);
+    background: var(--chip-bg-strong);
     border: 1px dashed rgba(120, 90, 50, 0.3);
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
@@ -517,7 +569,7 @@
   .card .fav {
     position: absolute;
     top: 12px; right: 12px;
-    background: rgba(255, 250, 235, 0.85);
+    background: var(--surface-bg-strong);
     border: 1px solid var(--paper-edge);
     width: 32px; height: 32px;
     border-radius: 50%;
@@ -584,14 +636,19 @@
     flex-wrap: wrap;
     gap: 4px;
   }
-  .card .tag {
+  .tag {
     font-family: 'Caveat', cursive;
-    font-size: 14px;
-    color: var(--ink-soft);
-    background: rgba(220, 200, 150, 0.4);
+    font-size: 16px;
+    color: var(--chip-text);
+    background: var(--chip-bg);
     border-radius: 999px;
+    padding: 1px 12px;
+    border: 1px solid var(--chip-border);
+    display: inline-block;
+  }
+  .card .tag {
+    font-size: 14px;
     padding: 1px 10px;
-    border: 1px solid rgba(120, 90, 50, 0.2);
   }
   .card .actions {
     display: flex;
@@ -615,7 +672,7 @@
   .card .actions .open:hover { color: var(--accent-soft); }
   .card .actions .icon-btns { display: flex; gap: 6px; }
   .icon-btn {
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px solid var(--paper-edge);
     color: var(--ink-soft);
     border-radius: 4px;
@@ -749,7 +806,7 @@
     font-family: 'Caveat', cursive;
     font-size: 22px;
     color: var(--ink-soft);
-    background: rgba(220, 200, 150, 0.25);
+    background: var(--chip-bg-soft);
     border-left: 3px solid var(--accent-soft);
     padding: 12px 16px;
     margin-top: 16px;
@@ -857,7 +914,7 @@
   .modal textarea,
   .modal select {
     width: 100%;
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: none;
     border-bottom: 1.5px solid rgba(120, 90, 50, 0.4);
     padding: 8px 6px;
@@ -871,7 +928,7 @@
   .modal textarea:focus,
   .modal select:focus {
     border-bottom-color: var(--accent);
-    background: rgba(255, 250, 235, 0.95);
+    background: var(--surface-bg-strong);
   }
   .modal textarea {
     min-height: 110px;
@@ -968,7 +1025,7 @@
   .view-recipe .meta-row strong { color: var(--ink); font-weight: 600; }
   .view-recipe .servings-scaler {
     display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(220, 200, 150, 0.4);
+    background: var(--chip-bg);
     border-radius: 999px; padding: 2px 6px;
   }
   .view-recipe .servings-scaler button {
@@ -1010,7 +1067,7 @@
     font-family: 'Caveat', cursive;
     font-size: 22px;
     color: var(--ink-soft);
-    background: rgba(220, 200, 150, 0.25);
+    background: var(--chip-bg-soft);
     border-left: 3px solid var(--accent-soft);
     padding: 12px 16px;
     margin-top: 18px;
@@ -1020,11 +1077,11 @@
   .view-recipe .tag-row .tag {
     font-family: 'Caveat', cursive;
     font-size: 16px;
-    color: var(--ink-soft);
-    background: rgba(220, 200, 150, 0.4);
+    color: var(--chip-text);
+    background: var(--chip-bg);
     border-radius: 999px;
     padding: 1px 12px;
-    border: 1px solid rgba(120, 90, 50, 0.2);
+    border: 1px solid var(--chip-border);
   }
   .view-recipe .stamps {
     margin-top: 14px;
@@ -1171,7 +1228,7 @@
   .shopping-pick { max-height: 360px; overflow-y: auto; padding-right: 4px; }
   .shopping-pick label {
     display: flex; gap: 10px; align-items: center;
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px solid var(--paper-edge);
     padding: 9px 12px;
     border-radius: 3px;
@@ -1183,9 +1240,9 @@
     font-size: 17px;
     color: var(--ink);
   }
-  .shopping-pick label:hover { background: rgba(255, 240, 210, 0.95); }
+  .shopping-pick label:hover { background: var(--surface-hover); }
   .shopping-result {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 14px;
@@ -1267,7 +1324,7 @@
 
   /* Sort dropdown */
   .sort-wrap select {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 4px;
     padding: 10px 14px;
@@ -1317,7 +1374,7 @@
 
   /* Audio recorder */
   .audio-block {
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px dashed var(--paper-edge);
     border-radius: 4px;
     padding: 12px 14px;
@@ -1432,7 +1489,7 @@
     overflow-x: auto;
   }
   .planner-cell {
-    background: rgba(255, 250, 235, 0.5);
+    background: var(--surface-bg-faint);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 8px;
@@ -1484,7 +1541,7 @@
     gap: 16px;
   }
   .contrib-card {
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 16px;
@@ -1526,7 +1583,7 @@
 
   /* What can I make */
   .match-result {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 12px 14px;
@@ -1535,7 +1592,7 @@
     display: flex; justify-content: space-between; align-items: center;
     gap: 10px;
   }
-  .match-result:hover { background: rgba(255, 240, 210, 0.95); }
+  .match-result:hover { background: var(--surface-hover); }
   .match-result .score {
     font-family: 'Caveat', cursive;
     font-size: 18px;
@@ -1576,7 +1633,7 @@
   .share-qr canvas, .share-qr img { display: block; }
   .share-url-box {
     display: flex; gap: 8px; align-items: center;
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 8px 10px;
@@ -1680,7 +1737,7 @@
   /* Per-step photos */
   .step-row {
     display: flex; gap: 10px; align-items: flex-start;
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 10px 12px;
@@ -1766,7 +1823,7 @@
   /* Comments */
   .comments-list { margin-top: 8px; }
   .comment {
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border-left: 3px solid var(--leaf);
     padding: 8px 12px;
     border-radius: 2px;
@@ -1805,7 +1862,7 @@
     gap: 14px; margin-top: 12px;
   }
   .stat-card {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     padding: 16px;
@@ -1831,7 +1888,7 @@
   .stat-bar .stat-label { flex: 0 0 140px; font-family: 'Cormorant Garamond', serif; font-size: 16px; }
   .stat-bar .stat-track {
     flex: 1; height: 14px;
-    background: rgba(220, 200, 150, 0.3);
+    background: var(--chip-bg-soft);
     border-radius: 7px;
     overflow: hidden;
   }
@@ -1858,7 +1915,7 @@
     padding: 4px 0;
   }
   .cal-cell {
-    background: rgba(255, 250, 235, 0.5);
+    background: var(--surface-bg-faint);
     border: 1px solid var(--paper-edge);
     border-radius: 2px;
     padding: 6px;
@@ -1887,7 +1944,7 @@
 
   /* Journal entry */
   .journal-entry {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border-left: 3px solid var(--accent-soft);
     padding: 10px 14px;
     margin: 6px 0;
@@ -1903,7 +1960,7 @@
 
   /* On this day banner */
   .on-this-day {
-    background: linear-gradient(135deg, rgba(243, 217, 138, 0.4), rgba(220, 200, 150, 0.2));
+    background: var(--otd-grad);
     border: 1px solid var(--paper-edge);
     border-left: 4px solid var(--gold);
     border-radius: 3px;
@@ -2015,7 +2072,7 @@
   .version-row {
     display: flex; justify-content: space-between; align-items: center;
     padding: 8px 12px;
-    background: rgba(255, 250, 235, 0.6);
+    background: var(--surface-bg-soft);
     border: 1px solid var(--paper-edge);
     border-radius: 3px;
     margin-bottom: 6px;
@@ -2069,7 +2126,7 @@
     margin: 16px 0;
   }
   .profile-tile {
-    background: rgba(255, 250, 235, 0.7);
+    background: var(--surface-bg);
     border: 1px solid var(--paper-edge);
     border-radius: 6px;
     padding: 14px 12px;
@@ -2150,7 +2207,7 @@
     gap: 10px;
   }
   .header-credit {
-    background: rgba(255, 250, 235, 0.85);
+    background: var(--surface-bg-strong);
     border: 1px solid var(--paper-edge);
     border-radius: 999px;
     padding: 6px 14px;
@@ -2179,7 +2236,7 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(255, 250, 235, 0.85);
+    background: var(--surface-bg-strong);
     border: 1px solid var(--paper-edge);
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     cursor: pointer;
@@ -2191,7 +2248,7 @@
     transition: transform .2s ease, background .15s ease;
   }
   .theme-toggle-btn:hover {
-    background: rgba(255, 240, 210, 1);
+    background: var(--surface-hover);
     transform: rotate(15deg);
   }
   @media (max-width: 720px) {
@@ -2204,7 +2261,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 250, 235, 0.85);
+    background: var(--surface-bg-strong);
     border: 1px solid var(--paper-edge);
     border-radius: 999px;
     padding: 5px 12px 5px 5px;
@@ -2670,7 +2727,7 @@
     <button class="close-x" data-close>×</button>
     <h2>A shared recipe</h2>
     <div class="modal-sub" id="importSub">someone has shared a recipe with you</div>
-    <div id="importPreview" style="background: rgba(255, 250, 235, 0.7); border: 1px solid var(--paper-edge); border-radius: 3px; padding: 16px; margin: 12px 0; max-height: 280px; overflow-y: auto;"></div>
+    <div id="importPreview" style="background: var(--surface-bg); border: 1px solid var(--paper-edge); border-radius: 3px; padding: 16px; margin: 12px 0; max-height: 280px; overflow-y: auto; color: var(--ink);"></div>
     <div class="modal-actions">
       <button type="button" class="btn btn-ghost" data-close>Skip</button>
       <button type="button" class="btn btn-primary" id="importConfirm">Add to my book</button>
